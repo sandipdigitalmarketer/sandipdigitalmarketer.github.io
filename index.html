@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sandip Digital — Marketing that reaches people first</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #ffffff;
+    --bg2: #eaf2fd;
+    --panel: #f2f7fd;
+    --ink: #0b1a33;
+    --muted: #5b6b85;
+    --accent: #1456e0;
+    --accent2: #159bff;
+    --line: rgba(11,26,51,0.1);
+    --line-strong: rgba(11,26,51,0.2);
+  }
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  body{
+    margin:0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Space Grotesk', sans-serif;
+    overflow-x: hidden;
+  }
+  ::selection{ background: var(--accent); color: #ffffff; }
+
+  h1,h2,h3, .serif{
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    line-height: 1.02;
+    margin: 0;
+  }
+
+  a{ color: inherit; text-decoration: none; }
+
+  .wrap{
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  @media (max-width: 720px){
+    .wrap{ padding: 0 22px; }
+  }
+
+  /* reduced motion */
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+  }
+
+  :focus-visible{
+    outline: 2px solid var(--accent2);
+    outline-offset: 3px;
+  }
+
+  /* ---------- NAV ---------- */
+  header{
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 40;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.94), rgba(255,255,255,0));
+    padding: 26px 0 40px;
+  }
+  nav{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+  }
+  .logo{
+    font-family: 'Instrument Serif', serif;
+    font-size: 22px;
+    letter-spacing: 0.2px;
+  }
+  .logo em{ font-style: italic; color: var(--accent); }
+  .nav-links{
+    display:flex;
+    gap: 34px;
+    font-size: 14.5px;
+    color: var(--muted);
+  }
+  .nav-links a{ transition: color .2s ease; }
+  .nav-links a:hover{ color: var(--ink); }
+  .nav-cta{
+    font-size: 14px;
+    padding: 10px 18px;
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  .nav-cta:hover{ border-color: var(--accent); color: var(--accent); }
+  @media (max-width: 780px){
+    .nav-links{ display:none; }
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position: relative;
+    min-height: 100svh;
+    display:flex;
+    align-items:center;
+    padding-top: 90px;
+  }
+  .hero-grid{
+    width:100%;
+    display:grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 40px;
+    align-items:center;
+  }
+  @media (max-width: 900px){
+    .hero-grid{ grid-template-columns: 1fr; }
+  }
+
+  .kicker{
+    font-size: 14.5px;
+    color: var(--accent2);
+    margin-bottom: 22px;
+    display:flex;
+    align-items:center;
+    gap: 10px;
+  }
+  .kicker::before{
+    content:'';
+    width: 22px; height: 1px;
+    background: var(--accent2);
+  }
+
+  .hero h1{
+    font-size: clamp(44px, 6vw, 80px);
+    color: var(--ink);
+    max-width: 620px;
+  }
+  .hero h1 i{
+    color: var(--accent);
+    font-style: italic;
+  }
+
+  .hero p.lede{
+    margin-top: 26px;
+    max-width: 440px;
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--muted);
+  }
+
+  .hero-actions{
+    margin-top: 38px;
+    display:flex;
+    align-items:center;
+    gap: 26px;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap: 10px;
+    background: var(--accent);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 14px 24px;
+    border-radius: 999px;
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+  .btn:hover{ transform: translateY(-2px); box-shadow: 0 10px 30px -8px rgba(20,86,224,0.45); }
+  .link-quiet{
+    font-size: 14.5px;
+    color: var(--muted);
+    border-bottom: 1px solid var(--line-strong);
+    padding-bottom: 2px;
+    transition: color .2s ease, border-color .2s ease;
+  }
+  .link-quiet:hover{ color: var(--ink); border-color: var(--ink); }
+
+  .hero-canvas-wrap{
+    position: relative;
+    height: 480px;
+  }
+  #hero-canvas{
+    width: 100%;
+    height: 100%;
+    display:block;
+  }
+  .hero-canvas-wrap::before{
+    content:'';
+    position:absolute;
+    inset: -40px;
+    background: radial-gradient(circle at 55% 45%, rgba(20,86,224,0.10), transparent 60%);
+    pointer-events:none;
+  }
+  .canvas-caption{
+    position:absolute;
+    bottom: -6px; left: 50%;
+    transform: translateX(-50%);
+    font-size: 12.5px;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  @media (max-width: 900px){
+    .hero-canvas-wrap{ height: 340px; margin-top: 20px; }
+  }
+
+  /* ---------- MARQUEE STRIP ---------- */
+  .strip{
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 16px 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .strip-track{
+    display:inline-flex;
+    gap: 46px;
+    animation: scroll-left 26s linear infinite;
+    font-size: 14px;
+    color: var(--muted);
+  }
+  .strip-track span{ display:flex; align-items:center; gap: 46px; }
+  .strip-track b{ color: var(--ink); font-weight: 500; }
+  @keyframes scroll-left{
+    from{ transform: translateX(0); }
+    to{ transform: translateX(-50%); }
+  }
+
+  /* ---------- SERVICES / PATH ---------- */
+  .path{
+    padding: 140px 0 120px;
+    position: relative;
+  }
+  .section-head{
+    display:grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 40px;
+    margin-bottom: 90px;
+  }
+  @media (max-width: 820px){
+    .section-head{ grid-template-columns: 1fr; margin-bottom: 60px; }
+  }
+  .section-head h2{
+    font-size: clamp(32px, 4vw, 46px);
+  }
+  .section-head p{
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.65;
+    max-width: 380px;
+    align-self: end;
+  }
+
+  .path-line{
+    position: relative;
+    height: 1px;
+    background: var(--line-strong);
+    margin-bottom: 0;
+  }
+
+  .service-columns{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+  @media (max-width: 860px){
+    .service-columns{ grid-template-columns: 1fr; }
+  }
+
+  .service-col{
+    position: relative;
+    padding: 46px 34px 40px;
+    border-right: 1px solid var(--line);
+    transition: background .3s ease;
+  }
+  .service-col:last-child{ border-right: none; }
+  @media (max-width: 860px){
+    .service-col{ border-right: none; border-bottom: 1px solid var(--line); }
+    .service-col:last-child{ border-bottom: none; }
+  }
+  .service-col:hover{ background: rgba(237,238,242,0.02); }
+
+  .service-dot{
+    position:absolute;
+    top: -1px;
+    left: 34px;
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 1px solid var(--line-strong);
+    transform: translateY(-50%);
+    transition: background .3s ease, border-color .3s ease, transform .3s ease;
+  }
+  .service-col:hover .service-dot{
+    background: var(--accent2);
+    border-color: var(--accent2);
+    transform: translateY(-50%) scale(1.3);
+  }
+
+  .service-num{
+    font-family: 'Instrument Serif', serif;
+    font-size: 22px;
+    color: var(--muted);
+    display:block;
+    margin-bottom: 28px;
+  }
+
+  .service-visual{
+    height: 130px;
+    perspective: 700px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom: 28px;
+  }
+
+  .service-title{
+    font-family: 'Instrument Serif', serif;
+    font-size: 28px;
+    margin-bottom: 14px;
+  }
+  .service-title i{ font-style: italic; color: var(--accent2); }
+  .service-desc{
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.65;
+    margin-bottom: 20px;
+  }
+  .service-tags{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .service-tags span{
+    font-size: 12px;
+    color: var(--ink);
+    border: 1px solid var(--line-strong);
+    padding: 6px 11px;
+    border-radius: 999px;
+  }
+  .service-shape{
+    width: 108px; height: 108px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: spin-slow 14s linear infinite;
+  }
+  @keyframes spin-slow{
+    from{ transform: rotateX(-18deg) rotateY(0deg); }
+    to{ transform: rotateX(-18deg) rotateY(360deg); }
+  }
+  .service-shape .face{
+    position:absolute;
+    inset:0;
+    border: 1px solid var(--line-strong);
+    background: linear-gradient(160deg, rgba(20,86,224,0.07), rgba(21,155,255,0.06));
+    display:flex; align-items:center; justify-content:center;
+  }
+  .shape-social .f1{ transform: translateZ(54px); }
+  .shape-social .f2{ transform: rotateY(90deg) translateZ(54px); }
+  .shape-social .f3{ transform: rotateY(180deg) translateZ(54px); }
+  .shape-social .f4{ transform: rotateY(-90deg) translateZ(54px); }
+  .shape-social .f5{ transform: rotateX(90deg) translateZ(54px); }
+  .shape-social .f6{ transform: rotateX(-90deg) translateZ(54px); }
+
+  .ring3d{
+    width: 96px; height: 96px;
+    border-radius: 50%;
+    border: 1px solid var(--accent);
+    position: relative;
+    transform-style: preserve-3d;
+    animation: ring-spin 10s linear infinite;
+  }
+  .ring3d::before, .ring3d::after{
+    content:'';
+    position:absolute; inset: 0;
+    border-radius: 50%;
+    border: 1px solid var(--line-strong);
+  }
+  .ring3d::before{ transform: rotateX(70deg); }
+  .ring3d::after{ transform: rotateY(70deg); border-color: var(--accent2); }
+  @keyframes ring-spin{
+    from{ transform: rotateY(0deg) rotateX(8deg); }
+    to{ transform: rotateY(360deg) rotateX(8deg); }
+  }
+
+  .search3d{
+    position: relative;
+    width: 110px; height: 110px;
+    transform-style: preserve-3d;
+    animation: search-float 5s ease-in-out infinite;
+  }
+  @keyframes search-float{
+    0%,100%{ transform: rotateX(-14deg) rotateY(-18deg) translateY(0); }
+    50%{ transform: rotateX(-14deg) rotateY(-18deg) translateY(-10px); }
+  }
+  .search-lens{
+    position:absolute; top: 10px; left: 10px;
+    width: 54px; height: 54px;
+    border-radius: 50%;
+    border: 3px solid var(--accent2);
+    background: rgba(21,155,255,0.06);
+  }
+  .search-handle{
+    position:absolute; top: 60px; left: 62px;
+    width: 34px; height: 4px;
+    background: var(--accent2);
+    border-radius: 2px;
+    transform: rotate(45deg);
+    transform-origin: left center;
+  }
+
+  /* ---------- STATS ---------- */
+  .stats{
+    padding: 100px 0;
+    border-top: 1px solid var(--line);
+  }
+  .stats-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+  @media (max-width: 720px){
+    .stats-grid{ grid-template-columns: 1fr; gap: 44px; }
+  }
+  .stat h3{
+    font-size: clamp(38px, 5vw, 56px);
+    color: var(--ink);
+  }
+  .stat h3 span{ color: var(--accent); }
+  .stat p{
+    margin-top: 12px;
+    color: var(--muted);
+    font-size: 14.5px;
+    max-width: 260px;
+    line-height: 1.6;
+  }
+
+  /* ---------- APPROACH ---------- */
+  .approach{
+    padding: 20px 0 120px;
+  }
+  .approach-inner{
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 64px;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+  }
+  @media (max-width: 820px){
+    .approach-inner{ grid-template-columns: 1fr; padding: 40px 26px; }
+  }
+  .approach h2{
+    font-size: clamp(30px, 4vw, 40px);
+    max-width: 420px;
+  }
+  .approach-list{
+    display:flex;
+    flex-direction: column;
+    gap: 26px;
+  }
+  .approach-item{
+    display:flex;
+    gap: 18px;
+    padding-bottom: 26px;
+    border-bottom: 1px solid var(--line);
+  }
+  .approach-item:last-child{ border-bottom:none; padding-bottom:0; }
+  .approach-item .mark{
+    width: 8px; height: 8px;
+    margin-top: 8px;
+    border-radius: 50%;
+    background: var(--accent2);
+    flex-shrink: 0;
+  }
+  .approach-item h4{
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    margin: 0 0 6px;
+  }
+  .approach-item p{
+    margin:0;
+    color: var(--muted);
+    font-size: 14.5px;
+    line-height: 1.6;
+  }
+
+  /* ---------- CTA ---------- */
+  .cta{
+    padding: 60px 0 140px;
+    text-align: center;
+  }
+  .cta h2{
+    font-size: clamp(38px, 6vw, 64px);
+    max-width: 720px;
+    margin: 0 auto 30px;
+  }
+  .cta h2 i{ color: var(--accent); font-style: italic; }
+  .cta p{
+    color: var(--muted);
+    max-width: 420px;
+    margin: 0 auto 40px;
+    font-size: 16px;
+  }
+  .cta .btn{
+    padding: 16px 32px;
+    font-size: 16px;
+  }
+
+  /* ---------- ORBIT (3D revolving social logos) ---------- */
+  .orbit-section{
+    padding: 40px 0 130px;
+    text-align: center;
+  }
+  .orbit-scene{
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    height: 420px;
+    margin: 70px auto 0;
+    perspective: 1100px;
+  }
+  .orbit-core{
+    position:absolute;
+    top:50%; left:50%;
+    width: 118px; height: 118px;
+    margin: -59px 0 0 -59px;
+    border-radius: 50%;
+    background: var(--panel);
+    border: 1px solid var(--line-strong);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-size: 20px;
+    color: var(--accent);
+    box-shadow: 0 0 0 10px rgba(20,86,224,0.05), 0 0 0 22px rgba(20,86,224,0.03);
+  }
+  .orbit-ring{
+    position:absolute;
+    top:50%; left:50%;
+    width: 340px; height: 340px;
+    margin: -170px 0 0 -170px;
+    border-radius: 50%;
+    border: 1px dashed var(--line-strong);
+    transform-style: preserve-3d;
+    transform: rotateX(62deg);
+  }
+  .orbit{
+    position:absolute;
+    inset:0;
+    transform-style: preserve-3d;
+    animation: orbit-spin 22s linear infinite;
+  }
+  @keyframes orbit-spin{
+    from{ transform: rotateY(0deg); }
+    to{ transform: rotateY(360deg); }
+  }
+  .orbit-item{
+    position:absolute;
+    top:50%; left:50%;
+    width: 60px; height: 60px;
+    margin: -30px 0 0 -30px;
+    transform-style: preserve-3d;
+  }
+  .orbit-item .icon-inner{
+    width:100%; height:100%;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 1px solid var(--line-strong);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow: 0 10px 24px -12px rgba(11,26,51,0.25);
+    animation: counter-spin 22s linear infinite;
+  }
+  .orbit-item svg{ width: 26px; height: 26px; color: var(--accent); }
+  .orbit-item.brand-ig svg{ color: #d6249f; }
+  .orbit-item.brand-fb svg{ color: #1877f2; }
+  .orbit-item.brand-li svg{ color: #0a66c2; }
+  .orbit-item.brand-yt svg{ color: #ff0000; }
+  .orbit-item.brand-wa svg{ color: #25d366; }
+  .orbit-item.brand-go svg{ color: #ea4335; }
+
+  @keyframes counter-spin{
+    from{ transform: rotateX(-62deg) rotateY(0deg); }
+    to{ transform: rotateX(-62deg) rotateY(-360deg); }
+  }
+  .item-1{ transform: rotateX(62deg) rotateY(0deg) translateZ(170px); }
+  .item-2{ transform: rotateX(62deg) rotateY(60deg) translateZ(170px); }
+  .item-3{ transform: rotateX(62deg) rotateY(120deg) translateZ(170px); }
+  .item-4{ transform: rotateX(62deg) rotateY(180deg) translateZ(170px); }
+  .item-5{ transform: rotateX(62deg) rotateY(240deg) translateZ(170px); }
+  .item-6{ transform: rotateX(62deg) rotateY(300deg) translateZ(170px); }
+
+  @media (max-width: 520px){
+    .orbit-scene{ height: 340px; max-width: 320px; }
+    .orbit-ring{ width: 250px; height: 250px; margin: -125px 0 0 -125px; }
+    .item-1,.item-2,.item-3,.item-4,.item-5,.item-6{ }
+    .item-1{ transform: rotateX(62deg) rotateY(0deg) translateZ(125px); }
+    .item-2{ transform: rotateX(62deg) rotateY(60deg) translateZ(125px); }
+    .item-3{ transform: rotateX(62deg) rotateY(120deg) translateZ(125px); }
+    .item-4{ transform: rotateX(62deg) rotateY(180deg) translateZ(125px); }
+    .item-5{ transform: rotateX(62deg) rotateY(240deg) translateZ(125px); }
+    .item-6{ transform: rotateX(62deg) rotateY(300deg) translateZ(125px); }
+  }
+
+  /* ---------- CONTACT DETAILS ---------- */
+  .contact-details{
+    margin-top: 44px;
+    display:flex;
+    justify-content:center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .contact-pill{
+    display:flex;
+    align-items:center;
+    gap: 10px;
+    font-size: 14.5px;
+    color: var(--ink);
+    border: 1px solid var(--line-strong);
+    padding: 12px 20px;
+    border-radius: 999px;
+    background: #ffffff;
+    transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+  }
+  .contact-pill svg{ width: 17px; height: 17px; color: var(--accent); flex-shrink:0; }
+  .contact-pill:hover{
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px -14px rgba(20,86,224,0.4);
+  }
+  .contact-pill.linkedin svg{ color: #0a66c2; }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    border-top: 1px solid var(--line);
+    padding: 48px 0 40px;
+  }
+  .footer-top{
+    display:flex;
+    justify-content: space-between;
+    align-items:flex-end;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding-bottom: 34px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--line);
+  }
+  .footer-top .footer-logo{
+    font-family: 'Instrument Serif', serif;
+    font-size: 24px;
+  }
+  .footer-top .footer-logo em{ font-style: italic; color: var(--accent); }
+  .footer-top p{
+    margin: 10px 0 0;
+    color: var(--muted);
+    font-size: 14px;
+    max-width: 280px;
+    line-height: 1.6;
+  }
+
+  .socials{
+    display:flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .social-link{
+    display:flex;
+    align-items:center;
+    gap: 9px;
+    font-size: 13.5px;
+    color: var(--muted);
+    border: 1px solid var(--line-strong);
+    padding: 9px 15px;
+    border-radius: 999px;
+    transition: border-color .2s ease, color .2s ease, transform .2s ease;
+  }
+  .social-link svg{ width: 15px; height: 15px; flex-shrink: 0; }
+  .social-link:hover{
+    border-color: var(--accent2);
+    color: var(--ink);
+    transform: translateY(-2px);
+  }
+
+  .footer-row{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    flex-wrap: wrap;
+    gap: 18px;
+    font-size: 14px;
+    color: var(--muted);
+  }
+  .footer-row a:hover{ color: var(--ink); }
+  .footer-links{ display:flex; gap: 24px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <div class="logo">sandip<em>digital</em></div>
+      <div class="nav-links">
+        <a href="#path">Services</a>
+        <a href="#approach">Approach</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a href="#contact" class="nav-cta">Get a plan</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="kicker">Sandip Digital — performance marketing</div>
+      <h1>Reach people <i>before</i> they start searching.</h1>
+      <p class="lede">We run the full path from first scroll to final click — social media marketing, Meta ads, and Google ads, built as one connected system instead of three separate vendors.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn">Start a project</a>
+        <a href="#path" class="link-quiet">See how it works</a>
+      </div>
+    </div>
+    <div class="hero-canvas-wrap">
+      <canvas id="hero-canvas"></canvas>
+      <div class="canvas-caption">your audience, mapped in real time</div>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="strip-track">
+    <span><b>Social media marketing</b> · <b>Meta ads</b> · <b>Google ads</b> · <b>Creative</b> · <b>Analytics</b> · <b>Landing pages</b></span>
+    <span><b>Social media marketing</b> · <b>Meta ads</b> · <b>Google ads</b> · <b>Creative</b> · <b>Analytics</b> · <b>Landing pages</b></span>
+  </div>
+</div>
+
+<section class="path" id="path">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Three services. One path from attention to intent.</h2>
+      <p>Each stage feeds the next — what people see on social shapes what we test in ads, and what performs in ads tells us what to bid on in search.</p>
+    </div>
+
+    <div class="path-line"></div>
+
+    <div class="service-columns">
+      <div class="service-col">
+        <div class="service-dot"></div>
+        <span class="service-num">01</span>
+        <div class="service-visual">
+          <div class="service-shape shape-social">
+            <div class="face f1"></div>
+            <div class="face f2"></div>
+            <div class="face f3"></div>
+            <div class="face f4"></div>
+            <div class="face f5"></div>
+            <div class="face f6"></div>
+          </div>
+        </div>
+        <h3 class="service-title">Social media <i>marketing</i></h3>
+        <p class="service-desc">We build the accounts people actually follow — a posting rhythm, a visual voice, and content that gets saved and shared, not just seen. This is where your brand becomes recognizable before anyone clicks anything.</p>
+        <div class="service-tags">
+          <span>Content strategy</span>
+          <span>Instagram &amp; Facebook</span>
+          <span>Community management</span>
+        </div>
+      </div>
+
+      <div class="service-col">
+        <div class="service-dot"></div>
+        <span class="service-num">02</span>
+        <div class="service-visual">
+          <div class="ring3d"></div>
+        </div>
+        <h3 class="service-title">Meta <i>ads</i></h3>
+        <p class="service-desc">Once we know what content resonates, we put budget behind it. We build audiences from your best-performing organic posts, test creative in small batches, and scale only what's actually converting.</p>
+        <div class="service-tags">
+          <span>Audience targeting</span>
+          <span>Creative testing</span>
+          <span>Retargeting funnels</span>
+        </div>
+      </div>
+
+      <div class="service-col">
+        <div class="service-dot"></div>
+        <span class="service-num">03</span>
+        <div class="service-visual">
+          <div class="search3d">
+            <div class="search-lens"></div>
+            <div class="search-handle"></div>
+          </div>
+        </div>
+        <h3 class="service-title">Google <i>ads</i></h3>
+        <p class="service-desc">By the time someone searches your category, your name should already feel familiar. We capture that intent with search and shopping campaigns built to convert, not just to click.</p>
+        <div class="service-tags">
+          <span>Search campaigns</span>
+          <span>Shopping ads</span>
+          <span>Conversion tracking</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="wrap stats-grid">
+    <div class="stat">
+      <h3><span>3</span> channels</h3>
+      <p>Managed as one connected system, not three disconnected line items on an invoice.</p>
+    </div>
+    <div class="stat">
+      <h3>1 <span>strategist</span></h3>
+      <p>One person owns your account end to end, so nothing gets lost between departments.</p>
+    </div>
+    <div class="stat">
+      <h3><span>Weekly</span> reporting</h3>
+      <p>Plain-language updates on what worked, what didn't, and what we're changing next.</p>
+    </div>
+  </div>
+</section>
+
+<section class="approach" id="approach">
+  <div class="wrap">
+    <div class="approach-inner">
+      <div>
+        <h2>Built for brands tired of guessing where their budget went.</h2>
+      </div>
+      <div class="approach-list">
+        <div class="approach-item">
+          <div class="mark"></div>
+          <div>
+            <h4>We start with the audience, not the platform</h4>
+            <p>Every plan begins with who you're trying to reach, then we pick the channels that actually get you there.</p>
+          </div>
+        </div>
+        <div class="approach-item">
+          <div class="mark"></div>
+          <div>
+            <h4>We show our work</h4>
+            <p>You see the same numbers we do — spend, cost per result, and revenue, without translation.</p>
+          </div>
+        </div>
+        <div class="approach-item">
+          <div class="mark"></div>
+          <div>
+            <h4>We change course fast</h4>
+            <p>Underperforming creative gets pulled within days, not at the end of a quarterly review.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="orbit-section">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:0;">
+      <h2>Wherever your audience scrolls, searches, or watches — we're already there.</h2>
+      <p>One team running your presence across every platform that matters, kept in sync instead of managed in silos.</p>
+    </div>
+
+    <div class="orbit-scene">
+      <div class="orbit-ring"></div>
+      <div class="orbit-core">sandip</div>
+      <div class="orbit">
+        <div class="orbit-item brand-ig item-1">
+          <div class="icon-inner">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg>
+          </div>
+        </div>
+        <div class="orbit-item brand-fb item-2">
+          <div class="icon-inner">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M15 4h-2a4 4 0 0 0-4 4v3H6v4h3v7h4v-7h3l1-4h-4V8a1 1 0 0 1 1-1h3z"/></svg>
+          </div>
+        </div>
+        <div class="orbit-item brand-li item-3">
+          <div class="icon-inner">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="7.5" y1="10" x2="7.5" y2="17"/><circle cx="7.5" cy="6.8" r="0.9" fill="currentColor" stroke="none"/><path d="M11.5 17v-4.2a2.3 2.3 0 0 1 4.6 0V17"/><line x1="11.5" y1="10" x2="11.5" y2="17"/></svg>
+          </div>
+        </div>
+        <div class="orbit-item brand-yt item-4">
+          <div class="icon-inner">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="2.5" y="6" width="19" height="12" rx="4"/><path d="M10.5 9.5l5 2.5-5 2.5z" fill="currentColor" stroke="none"/></svg>
+          </div>
+        </div>
+        <div class="orbit-item brand-wa item-5">
+          <div class="icon-inner">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 18l1.1-3.2A7 7 0 1 1 10 17.8z"/><path d="M9 10.5c0 3 2.5 5.5 5.5 5.5" stroke-linecap="round"/></svg>
+          </div>
+        </div>
+        <div class="orbit-item brand-go item-6">
+          <div class="icon-inner">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20 12a8 8 0 1 1-2.3-5.6"/><path d="M12 12h8"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="wrap">
+    <h2>Ready to stop running <i>three</i> separate campaigns?</h2>
+    <p>Tell us about your brand and we'll put together a plan across social, Meta, and Google within two business days.</p>
+    <a href="mailto:sandipdigitalmarketer@gmail.com" class="btn">Start a project</a>
+
+    <div class="contact-details">
+      <a class="contact-pill" href="mailto:sandipdigitalmarketer@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg>
+        sandipdigitalmarketer@gmail.com
+      </a>
+      <a class="contact-pill" href="tel:+918144199185">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 3h3l2 5-2.5 1.5a11 11 0 0 0 5 5L15 12l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 4 5a2 2 0 0 1 2-2z"/></svg>
+        +91 81441 99185
+      </a>
+      <a class="contact-pill linkedin" href="https://www.linkedin.com/company/112759363/admin/dashboard/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.15 1.45-2.15 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+        LinkedIn page
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">sandip<em>digital</em></div>
+        <p>Follow along for behind-the-scenes campaigns, creative tests, and results.</p>
+      </div>
+
+      <div class="socials">
+        <a class="social-link" href="https://instagram.com/sandipdigital.in" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+          Instagram
+        </a>
+        <a class="social-link" href="https://facebook.com/sandipdigital.in" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 4h-2a4 4 0 0 0-4 4v3H6v4h3v7h4v-7h3l1-4h-4V8a1 1 0 0 1 1-1h3z"/></svg>
+          Facebook
+        </a>
+        <a class="social-link" href="https://www.linkedin.com/company/112759363/admin/dashboard/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="7.5" y1="10" x2="7.5" y2="17"/><circle cx="7.5" cy="6.8" r="0.9" fill="currentColor" stroke="none"/><path d="M11.5 17v-4.2a2.3 2.3 0 0 1 4.6 0V17"/><line x1="11.5" y1="10" x2="11.5" y2="17"/></svg>
+          LinkedIn
+        </a>
+        <a class="social-link" href="https://youtube.com/@sandipdigitalin" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="6" width="19" height="12" rx="4"/><path d="M10.5 9.5l5 2.5-5 2.5z" fill="currentColor" stroke="none"/></svg>
+          YouTube
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-row">
+      <div>© <span id="year"></span> Sandip Digital</div>
+      <div class="footer-links">
+        <a href="mailto:sandipdigitalmarketer@gmail.com">sandipdigitalmarketer@gmail.com</a>
+        <a href="tel:+918144199185">+91 81441 99185</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // ---------- 3D hero network sphere ----------
+  (function(){
+    const canvas = document.getElementById('hero-canvas');
+    const wrap = canvas.parentElement;
+    let w = wrap.clientWidth, h = wrap.clientHeight;
+
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(50, w / h, 0.1, 100);
+    camera.position.set(0, 0, 7);
+
+    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+    renderer.setSize(w, h);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+    const group = new THREE.Group();
+    scene.add(group);
+
+    // Nodes on a sphere (fibonacci sphere distribution)
+    const NODE_COUNT = 60;
+    const radius = 2.6;
+    const nodes = [];
+    const nodeGeo = new THREE.SphereGeometry(0.035, 8, 8);
+    const nodeMatA = new THREE.MeshBasicMaterial({ color: 0x1456e0 });
+    const nodeMatB = new THREE.MeshBasicMaterial({ color: 0x159bff });
+    const nodeMatC = new THREE.MeshBasicMaterial({ color: 0x0b1a33 });
+
+    for (let i = 0; i < NODE_COUNT; i++) {
+      const y = 1 - (i / (NODE_COUNT - 1)) * 2;
+      const r = Math.sqrt(1 - y * y);
+      const theta = Math.PI * (1 + Math.sqrt(5)) * i;
+      const x = Math.cos(theta) * r;
+      const z = Math.sin(theta) * r;
+      const pos = new THREE.Vector3(x, y, z).multiplyScalar(radius);
+
+      const mat = i % 9 === 0 ? nodeMatA : (i % 13 === 0 ? nodeMatB : nodeMatC);
+      const mesh = new THREE.Mesh(nodeGeo, mat);
+      mesh.position.copy(pos);
+      group.add(mesh);
+      nodes.push(pos);
+    }
+
+    // Connect nearby nodes with thin lines
+    const lineMat = new THREE.LineBasicMaterial({ color: 0x9db3d6, transparent: true, opacity: 0.4 });
+    const linePositions = [];
+    for (let i = 0; i < nodes.length; i++) {
+      let connections = 0;
+      for (let j = i + 1; j < nodes.length; j++) {
+        if (connections >= 3) break;
+        const d = nodes[i].distanceTo(nodes[j]);
+        if (d < 1.15) {
+          linePositions.push(nodes[i].x, nodes[i].y, nodes[i].z);
+          linePositions.push(nodes[j].x, nodes[j].y, nodes[j].z);
+          connections++;
+        }
+      }
+    }
+    const lineGeo = new THREE.BufferGeometry();
+    lineGeo.setAttribute('position', new THREE.Float32BufferAttribute(linePositions, 3));
+    const lines = new THREE.LineSegments(lineGeo, lineMat);
+    group.add(lines);
+
+    // faint core wireframe sphere for structure
+    const coreGeo = new THREE.IcosahedronGeometry(radius * 0.98, 1);
+    const coreMat = new THREE.MeshBasicMaterial({ color: 0xbcd0ef, wireframe: true, transparent: true, opacity: 0.4 });
+    const core = new THREE.Mesh(coreGeo, coreMat);
+    group.add(core);
+
+    let targetRotY = 0, targetRotX = 0;
+    wrap.addEventListener('mousemove', (e) => {
+      const rect = wrap.getBoundingClientRect();
+      const mx = (e.clientX - rect.left) / rect.width - 0.5;
+      const my = (e.clientY - rect.top) / rect.height - 0.5;
+      targetRotY = mx * 0.6;
+      targetRotX = my * 0.4;
+    });
+
+    function onResize(){
+      w = wrap.clientWidth; h = wrap.clientHeight;
+      camera.aspect = w / h;
+      camera.updateProjectionMatrix();
+      renderer.setSize(w, h);
+    }
+    window.addEventListener('resize', onResize);
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let autoRot = 0;
+
+    function animate(){
+      requestAnimationFrame(animate);
+      if (!reduceMotion) autoRot += 0.0022;
+      group.rotation.y += (autoRot + targetRotY - group.rotation.y) * 0.05;
+      group.rotation.x += (targetRotX - group.rotation.x) * 0.05;
+      renderer.render(scene, camera);
+    }
+    animate();
+  })();
+</script>
+
+</body>
+</html>
